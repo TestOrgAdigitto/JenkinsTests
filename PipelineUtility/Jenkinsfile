@@ -1,0 +1,15 @@
+pipeline {
+    /*agent { docker { image 'node:6.3' } }*/
+    agent any
+    stages {
+        stage('Echo Stage') {
+            steps {
+                sh 'echo This is a demo pipleine step'
+            }
+        stage('Pipeline Utility Tester') {
+            steps {
+                script{datas = readYaml (file: 'config.yml')  }
+            }    
+        }
+    }
+}
