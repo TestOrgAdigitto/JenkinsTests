@@ -10,7 +10,7 @@ pipeline {
         stage('Pipeline Utility Tester') {
             steps {
                 script{datas = readYaml (file: 'config.yml') }
-                echo datas.size()
+                echo datas.size().toString()
                 
             }    
         }
