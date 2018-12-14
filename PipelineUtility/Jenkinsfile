@@ -6,10 +6,14 @@ pipeline {
             steps {
                 sh 'echo This is a demo pipleine step'
             }
+        }
         stage('Pipeline Utility Tester') {
             steps {
-                script{datas = readYaml (file: 'config.yml')  }
+                script{datas = readYaml (file: 'config.yml') }
+                echo datas.config.jobType.toString()
+
             }    
         }
+    
     }
 }
