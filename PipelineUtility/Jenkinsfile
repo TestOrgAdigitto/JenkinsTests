@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Testing Pipeline') {
             steps {
-                sh 'This is a demo step of pipeline'
+                sh 'echo "This is a demo step of pipeline"'
             }
         }
         stage('Pipeline Utility Tester') {
