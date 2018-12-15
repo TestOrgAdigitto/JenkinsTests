@@ -2,16 +2,17 @@ pipeline {
     /*agent { docker { image 'node:6.3' } }*/
     agent any
     stages {
-        stage('Echo Stage') {
+        stage('Testing Pipeline') {
             steps {
-                sh 'echo This is a demo pipleine step'
+                sh 'This is a demo step of pipeline'
             }
         }
         stage('Pipeline Utility Tester') {
             steps {
+                echo "Reading yaml data from config.yml file"
                 script{datas = readYaml (file: 'config.yml') }
-                echo datas.size().toString()
-                echo datas.config.toString()
+                echo "Size of data is : "datas.size().toString()
+                echo "Content in the data is : "datas.config.toString()
             }    
         }
     
