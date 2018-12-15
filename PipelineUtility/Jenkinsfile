@@ -8,8 +8,10 @@ pipeline {
             }
         }
         stage('Pipeline Utility Tester') {
+            steps{
+                sh 'echo "Reading data from config.yml file"
+            }
             steps {
-                sh 'echo "Reading yaml data from config.yml file"'
                 script{datas = readYaml (file: 'config.yml') }
                 datas.config.toString()
             }    
