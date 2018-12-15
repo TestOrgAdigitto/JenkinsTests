@@ -11,7 +11,7 @@ pipeline {
             steps {
                 script{datas = readYaml (file: 'config.yml') }
                 echo datas.size().toString()
-                echo datas[1].type.toString()
+                echo datas.config.toString()
             }    
         }
     
